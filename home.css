@@ -1,0 +1,336 @@
+/* =====================================================
+   SHIELD - Smart Home Safety Dashboard
+   Modern CSS Theme
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+
+:root {
+    --shield-navy: #0b1f3a;
+    --shield-blue: #14336b;
+    --shield-teal: #17a2b8;
+    --shield-teal-dark: #0d7f91;
+    --shield-bg-start: #eef3fb;
+    --shield-bg-end: #dde8f7;
+    --shield-safe: #1e9e6b;
+    --shield-warning: #c98a12;
+    --shield-danger: #d64545;
+    --shield-card-radius: 18px;
+}
+
+* {
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* =====================================================
+   MAIN BACKGROUND
+===================================================== */
+
+.stApp {
+    background: linear-gradient(160deg, var(--shield-bg-start) 0%, var(--shield-bg-end) 100%);
+}
+
+.main .block-container {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    max-width: 1400px;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(90deg, var(--shield-navy) 0%, var(--shield-teal-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    font-size: 46px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.2em;
+}
+
+h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--shield-navy);
+    font-weight: 700;
+}
+
+h4 {
+    color: var(--shield-blue);
+    font-weight: 700;
+    border-left: 5px solid var(--shield-teal);
+    padding-left: 12px;
+    margin-top: 1.2em;
+}
+
+/* Subtitle under title */
+
+.stApp > header + div p:first-of-type,
+div[data-testid="stMarkdownContainer"] > p {
+    color: #5a6b85;
+}
+
+/* Center the description text under the title */
+
+.stApp .block-container > div:nth-child(1) div[data-testid="stMarkdownContainer"] p {
+    text-align: center;
+    font-size: 18px;
+}
+
+/* =====================================================
+   DESCRIPTION TEXT
+===================================================== */
+
+p {
+    font-size: 16px;
+    color: #45526b;
+}
+
+/* =====================================================
+   SENSOR INPUT CARDS
+===================================================== */
+
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    background: #ffffff;
+    border-radius: var(--shield-card-radius);
+    box-shadow: 0 4px 18px rgba(11, 31, 58, 0.08);
+    border: 1px solid rgba(23, 162, 184, 0.12);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    padding: 6px 4px;
+}
+
+div[data-testid="stVerticalBlockBorderWrapper"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(11, 31, 58, 0.14);
+}
+
+div[data-testid="stSlider"] {
+    background-color: transparent;
+    padding: 8px 6px;
+}
+
+/* Slider track color */
+
+div[data-testid="stSlider"] div[role="slider"] {
+    background-color: var(--shield-teal) !important;
+}
+
+/* Card section labels */
+
+div[data-testid="stVerticalBlockBorderWrapper"] p strong {
+    font-size: 17px;
+    color: var(--shield-navy);
+}
+
+/* =====================================================
+   BUTTON STYLE
+===================================================== */
+
+.stButton {
+    display: flex;
+    justify-content: center;
+}
+
+.stButton > button {
+    background: linear-gradient(90deg, var(--shield-teal-dark) 0%, var(--shield-teal) 100%);
+    color: white;
+    border-radius: 14px;
+    height: 50px;
+    width: 280px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    border: none;
+    box-shadow: 0 6px 16px rgba(23, 162, 184, 0.35);
+    transition: all 0.18s ease;
+}
+
+.stButton > button:hover {
+    background: linear-gradient(90deg, var(--shield-navy) 0%, var(--shield-teal-dark) 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(23, 162, 184, 0.45);
+}
+
+.stButton > button:active {
+    transform: translateY(0px);
+}
+
+/* =====================================================
+   RESULT METRIC CARD
+===================================================== */
+
+div[data-testid="stMetric"] {
+    background: #ffffff;
+    padding: 18px 20px;
+    border-radius: var(--shield-card-radius);
+    box-shadow: 0 6px 18px rgba(11, 31, 58, 0.10);
+    border: 1px solid rgba(11, 31, 58, 0.05);
+}
+
+div[data-testid="stMetricLabel"] {
+    color: #6b7a94;
+    font-weight: 600;
+}
+
+div[data-testid="stMetricValue"] {
+    color: var(--shield-navy);
+    font-size: 32px;
+    font-weight: 800;
+}
+
+/* =====================================================
+   ALERT / DECISION BOXES
+===================================================== */
+
+div[data-testid="stAlert"] {
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+div[data-testid="stAlertContainer"] {
+    border-radius: 14px;
+}
+
+/* Safe */
+div[data-baseweb="notification"][kind="success"],
+.stAlert:has(div[role="alert"][data-baseweb-kind="success"]) {
+    background-color: #e6f7ee;
+}
+
+/* =====================================================
+   TABS
+===================================================== */
+
+button[data-baseweb="tab"] {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--shield-blue);
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: var(--shield-teal-dark);
+    border-bottom-color: var(--shield-teal) !important;
+}
+
+/* =====================================================
+   GRAPH / CHART CONTAINERS
+===================================================== */
+
+div[data-testid="stImage"], .stPlotlyChart {
+    background-color: white;
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 0 3px 10px rgba(11, 31, 58, 0.08);
+}
+
+div[data-testid="stImage"] img {
+    border-radius: 10px;
+}
+
+/* =====================================================
+   CAPTIONS / RULE LIST
+===================================================== */
+
+div[data-testid="stCaptionContainer"] {
+    background-color: #f4f8fc;
+    padding: 4px 10px;
+    margin-bottom: 4px;
+    border-radius: 8px;
+    border-left: 3px solid var(--shield-teal);
+    font-size: 13px;
+}
+
+/* =====================================================
+   DIVIDERS
+===================================================== */
+
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--shield-teal), transparent);
+    margin: 1.8em 0;
+}
+
+/* =====================================================
+   SIDEBAR (if used)
+===================================================== */
+
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, var(--shield-navy) 0%, var(--shield-blue) 100%);
+}
+
+section[data-testid="stSidebar"] * {
+    color: #f0f4fb !important;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    visibility: hidden;
+}
+
+#MainMenu {
+    visibility: hidden;
+}
+
+/* =====================================================
+   SHIELD STATUS CARDS (custom badge classes)
+===================================================== */
+
+.status-card {
+    padding: 22px;
+    border-radius: var(--shield-card-radius);
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 6px 16px rgba(11, 31, 58, 0.10);
+}
+
+.status-safe {
+    background-color: #e6f7ee;
+    color: var(--shield-safe);
+    border: 1px solid rgba(30, 158, 107, 0.25);
+}
+
+.status-warning {
+    background-color: #fdf3e3;
+    color: var(--shield-warning);
+    border: 1px solid rgba(201, 138, 18, 0.25);
+}
+
+.status-danger {
+    background-color: #fbe9e9;
+    color: var(--shield-danger);
+    border: 1px solid rgba(214, 69, 69, 0.25);
+}
+
+/* Category accent cards (kept for compatibility) */
+
+.fire-card {
+    background-color: #ffe5e5;
+    color: #b30000;
+}
+
+.gas-card {
+    background-color: #fff4cc;
+    color: #8a5a00;
+}
+
+.flood-card {
+    background-color: #dff6ff;
+    color: #1a859a;
+}
+
+.security-card {
+    background-color: #e8e8ff;
+    color: #0d061d;
+}

@@ -114,7 +114,3 @@ pytest test_fuzzy_systems.py
 - The crisp threshold model exists purely as a benchmark for comparison and is not intended to drive real alerts.
 
 ---
-
-## 📄 License
-
-Add your license here (e.g., MIT, Apache 2.0).
